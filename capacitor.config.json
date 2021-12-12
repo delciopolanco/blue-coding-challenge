@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "blue-coding-challenge",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
