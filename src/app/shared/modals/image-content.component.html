@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Image Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()"></ion-button>
+      <ion-icon slot="ion-only" name="close"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+    <img width='100%' [src]="image.images.downsized.url" alt="image" />
+    <ion-card-header>
+      <ion-card-subtitle>{{image.title}}</ion-card-subtitle>
+      <ion-card-title>{{image.username}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      If you want to know more please visit this: <a [href]="image.url">Profile</a>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,20 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { IonicModule } from '@ionic/angular';
-
 import { PrivatePageRoutingModule } from './private-routing.module';
-
 import { PrivatePage } from './private.page';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { GiphyService } from './dashboard/services/giphy/giphy.service';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
+    SharedModule,
     PrivatePageRoutingModule
   ],
-  declarations: [PrivatePage]
+  declarations: [PrivatePage],
+  providers: [GiphyService]
 })
 export class PrivatePageModule {}

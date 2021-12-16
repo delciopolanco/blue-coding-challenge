@@ -1,0 +1,13 @@
+<ng-container *ngIf="!isLoading else skeleton">
+  <app-gyphy-list-item
+    *ngFor="let img of images"
+    [image]="img"
+  ></app-gyphy-list-item>
+</ng-container>
+
+<ng-template #skeleton>
+  <ion-skeleton-text animated style="width: 100%; height: 100px"></ion-skeleton-text>
+  <ion-skeleton-text animated style="width: 100%; height: 200px"></ion-skeleton-text>
+  <ion-skeleton-text animated style="width: 100%; height: 250px"></ion-skeleton-text>
+  <ion-skeleton-text animated style="width: 100%; height: 180px"></ion-skeleton-text>
+</ng-template>
