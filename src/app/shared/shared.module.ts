@@ -7,13 +7,15 @@ import { SearchComponent } from './components/search/search.component';
 import { GyphyListComponent } from './components/gyphy-list/gyphy-list.component';
 import { GyphyListItemComponent } from './components/gyphy-list-item/gyphy-list-item.component';
 import { ImageModalComponent } from './modals/image-content.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 const declartions = [
   SearchComponent,
   GyphyListComponent,
   GyphyListItemComponent,
-  ImageModalComponent
+  ImageModalComponent,
+  HeaderComponent
 ];
 
 const imports = [

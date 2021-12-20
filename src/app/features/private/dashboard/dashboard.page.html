@@ -1,51 +1,37 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Your best Gifs!</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="'Your best giphys'"></app-header>
 
 <ion-content>
-  <app-search [placeHolder]="'Search Gyphys..'" (searchHandler)="searchImages($event)"></app-search>
+  <app-search
+    [placeHolder]="'Search Gyphys..'"
+    (searchHandler)="getImages(false, $event)"
+  ></app-search>
 
-  <ng-container *ngIf="imageStatus$ | async as status">
-    <ng-container *ngIf="status.success">
-      <div class="images-list">
-        <app-gyphy-list
-          *ngFor="let imgs of images"
-          [images]="imgs"
-        ></app-gyphy-list>
-      </div>
+  <ng-container>
+    <ng-container *ngIf="imageStatus$ | async as status">
+      <ng-container *ngIf="status.loading || status.success">
+        <div class="images-list">
+          <app-gyphy-list [images]="images"></app-gyphy-list>
+        </div>
 
-      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-        <ion-infinite-scroll-content
-          loadingSpinner="bubbles"
-          loadingText="Loading more images...">
-        </ion-infinite-scroll-content>
-      </ion-infinite-scroll>
+        <ion-infinite-scroll
+          threshold="100px"
+          (ionInfinite)="doInfinite($event)"
+        >
+          <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more images..."
+          >
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </ng-container>
+
+      <ng-container *ngIf="status.empty && status.success">
+        <div class="images-list">There is no info with such criteria</div>
+      </ng-container>
+
+      <ng-container *ngIf="status.error">
+        <div class="images-list">There was an error with the service....</div>
+      </ng-container>
     </ng-container>
-
-    <ng-container *ngIf="status.loading">
-      <div class="images-list">
-        <app-gyphy-list
-          *ngFor="let imgs of [1, 1 , 1]"
-          [isLoading]="true"
-        ></app-gyphy-list>
-      </div>
-    </ng-container>
-
-    <ng-container *ngIf="status.empty && status.success">
-      <div class="images-list">
-        There is no info with such criteria
-      </div>
-    </ng-container>
-
-    <ng-container *ngIf="status.error">
-      <div class="images-list">
-        There was an error with the service....
-      </div>
-    </ng-container>
-
   </ng-container>
 </ion-content>
-
-

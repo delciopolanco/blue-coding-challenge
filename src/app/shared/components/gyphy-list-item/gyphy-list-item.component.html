@@ -1,1 +1,6 @@
-<img [src]="image.images.downsized.url" style="width:100%" (click)="openModal()">
+<div *ngIf="!this.image.isLoaded" class='loader'>
+  <ion-spinner name="lines-small"></ion-spinner>
+</div>
+
+<ion-img [src]="image.images.downsized.url" style="width:100%" (click)="openModal()" (ionImgDidLoad)="imgLoaded()"></ion-img>
+

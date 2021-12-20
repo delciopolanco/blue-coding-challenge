@@ -1,12 +1,28 @@
-:host {
-  margin-top: 8px;
-  vertical-align: middle;
+.loader {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  ion-spinner {
+    width: 100%;
+    color: #000;
+  }
 }
 
-img {
-  margin-top: 8px;
+ion-img {
+  width: 100%;
+  min-height: auto;
+  padding: 8px;
+  margin-top: 10px;
   border-radius: 10px;
   box-shadow: 3px 5px 13px 2px rgba(168, 156, 156, 0.75);
   -webkit-box-shadow: 3px 5px 13px 2px rgba(168, 156, 156, 0.75);
   -moz-box-shadow: 3px 5px 13px 2px rgba(168, 156, 156, 0.75);
+}
+
+img {
+  border-radius: 10px;
 }

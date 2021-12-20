@@ -9,17 +9,9 @@ import { environment } from 'src/environments/environment';
 export class GiphyService {
   constructor(private readonly facade: FacadeCoreService) {}
 
-  getGifs(page: number = 0): Promise<GyphyResult> {
+  getGifs(page: number = 0, search: string = ''): Promise<GyphyResult> {
     const params = new IHttpParams(
-      `${ServicesId.gifs}/trending?api_key=${environment.key}&limit=${environment.pageSize}&offset=${page}`,
-      ServicesId.gifs
-    );
-    return this.facade.http.get<GyphyResult>(params);
-  }
-
-  searchGifs(search: string): Promise<GyphyResult> {
-    const params = new IHttpParams(
-      `${ServicesId.gifs}/trending?api_key=${environment.key}&limit=${environment.pageSize}&q=${search}`,
+      `${ServicesId.gifs}/trending?api_key=${environment.key}&limit=${environment.pageSize}&offset=${page}&q=${search}`,
       ServicesId.gifs
     );
     return this.facade.http.get<GyphyResult>(params);

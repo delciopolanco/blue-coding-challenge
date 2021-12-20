@@ -1,0 +1,28 @@
+:host {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 1rem;
+  border: 0;
+
+  .title-ios,
+  .title-md {
+    padding: 0 50px;
+    position: absolute;
+    width: 100%;
+  }
+
+  ion-title {
+    font-size: 1.5rem;
+    padding-inline-start: 50px;
+    padding-inline-end: 50px;
+    position: absolute;
+    width: 100%;
+    color: var(#345565);
+  }
+
+  ion-icon {
+    font-size: 2rem;
+  }
+}

@@ -1,5 +1,9 @@
 :host {
-  flex: 50%;
+  column-width: 153px;
+  -webkit-column-width: 153px;
+  column-gap: 17px;
+  -webkit-column-gap: 17px;
+  margin: 7px;
   padding: 0 10px;
 }
 

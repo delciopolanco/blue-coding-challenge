@@ -8,7 +8,6 @@ import { Gyphy } from '../../models/gyphy.model';
 })
 export class GyphyListComponent  {
   @Input() images: Array<Gyphy>;
-  @Input() isLoading: boolean;
 
   constructor() { }
 

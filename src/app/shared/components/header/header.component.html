@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon *ngIf="back" name="chevron-back-outline"(click)="backHandler()" aria-hidden="true"></ion-icon>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-icon *ngIf="close && !back" name="close" [size]=""  (click)="closeHandler()" aria-hidden="true"></ion-icon>
+    </ion-buttons>
+
+    <ion-title *ngIf="title" class="header__title ion-title">{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>

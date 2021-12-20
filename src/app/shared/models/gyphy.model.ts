@@ -8,4 +8,5 @@ export interface Gyphy {
   title: string;
   type: string;
   username: string;
+  isLoaded: boolean;
 }

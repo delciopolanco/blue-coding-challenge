@@ -1,12 +1,5 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{image.title}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="closeModal()"></ion-button>
-      <ion-icon slot="ion-only" name="close"></ion-icon>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="image.title" [close]="true" (closeEmmiter)="closeModal()"></app-header>
+
 
 <ion-content fullscreen>
   <ion-card>
