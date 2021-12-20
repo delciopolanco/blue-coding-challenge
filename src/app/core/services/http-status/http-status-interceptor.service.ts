@@ -8,6 +8,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { FacadeCoreService } from '../facade/facade.service';
+import { HttpCodes } from '../../constants/http-codes.constant';
 
 @Injectable()
 export class HttpStatusInterceptor implements HttpInterceptor {
@@ -30,7 +31,7 @@ export class HttpStatusInterceptor implements HttpInterceptor {
         map((response) => {
           if (response instanceof HttpResponse) {
             const { status } = response;
-            const result = status === 204 ? 'empty' : 'success';
+            const result = (status === HttpCodes.http200) ? 'empty' : 'success';
             this.facade.httpStatus.change(serviceId, result, null, status);
             return response;
           }
